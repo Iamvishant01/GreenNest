@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 
 const productsData = [
   {
     id: 1,
     name: "Rose",
-    image: "https://images.unsplash.com/photo-1580840461377-a048dd0d7d20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9zZSUyMHBsYW50fGVufDB8MHwwfHx8MA%3D%3D",
+    image: "https://images.unsplash.com/photo-1580840461377-a048dd0d7d20?w=500&auto=format&fit=crop&q=60",
     desc: "Roses are one of the most popular flowering plants in nurseries known for their beauty and fragrance."
   },
   {
@@ -22,7 +22,7 @@ const productsData = [
   {
     id: 4,
     name: "Money Plant",
-    image: "https://images.unsplash.com/photo-1592150621744-aca64f48394a",
+    image: "https://images.unsplash.com/photo-1592150621744-aca64f48394a?w=500&auto=format&fit=crop&q=60",
     desc: "Money plant is a popular indoor plant believed to bring prosperity and positive energy."
   },
   {
@@ -51,6 +51,32 @@ const productsData = [
   }
 ];
 
+const ProductCard = memo(({ product }) => {
+  return (
+    <div className="product-card">
+
+      <img
+        src={product.image}
+        alt={product.name}
+        loading="lazy"
+        decoding="async"
+        width="300"
+        height="200"
+      />
+
+      <div className="card-content">
+        <h4>{product.name}</h4>
+        <p>{product.desc}</p>
+
+        <button className="details-btn">
+          View Details
+        </button>
+      </div>
+
+    </div>
+  );
+});
+
 function TopSellingProducts() {
 
   const [visibleProducts, setVisibleProducts] = useState(6);
@@ -67,23 +93,8 @@ function TopSellingProducts() {
       </h3>
 
       <div className="product-grid">
-        {productsData.slice(0, visibleProducts).map(product => (
-
-          <div className="product-card" key={product.id}>
-
-            <img src={product.image} alt={product.name} />
-
-            <div className="card-content">
-              <h4>{product.name}</h4>
-              <p>{product.desc}</p>
-
-              <button className="details-btn">
-                View Details
-              </button>
-            </div>
-
-          </div>
-
+        {productsData.slice(0, visibleProducts).map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
 
