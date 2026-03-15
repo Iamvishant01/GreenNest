@@ -5,6 +5,7 @@ import NurserySection from './Components/NurserySection'
 import TopSellingProducts from './Components/TopSellingProducts'
 import Blogs from './Components/Blogs'
 import FAQ from './Components/FAQ'
+import Footer from './Components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
     <TopSellingProducts/>
     <Blogs/>
     <FAQ/>
+    <Footer/>
     </>
   )
 }

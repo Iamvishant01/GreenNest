@@ -105,7 +105,9 @@ function TopSellingProducts() {
           </button>
         </div>
       )}
-
+      &nbsp;
+      &nbsp;
+      <hr/>
     </div>
   );
 }

@@ -41,7 +41,7 @@ function FAQ() {
   };
 
   return (
-    <div className="faq-section">
+    <div className="faq-section" >
 
       <h3 className="faq-title">
         Frequently Asked Questions →
