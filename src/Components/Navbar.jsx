@@ -1,5 +1,8 @@
 import React from "react";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { Link } from "react-router-dom";
+
+
 function Navbar() {
   return (
     <>
@@ -7,7 +10,7 @@ function Navbar() {
       <div className="container-fluid">
 
         {/* Logo */}
-        <a className="navbar-brand" href="#">GreenNest.</a>
+        <a className="navbar-brand" href="/">GreenNest.</a>
 
         {/* Toggle Button */}
         <button
@@ -26,9 +29,10 @@ function Navbar() {
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
 
             <li className="nav-item">
-              <a className="nav-link active" href="#">Home</a>
+              <Link to="/" className="nav-link active" style={{ textDecoration: "none", color: "inherit" }}>
+                Home
+              </Link>
             </li>
-
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle active"
@@ -57,9 +61,11 @@ function Navbar() {
           </ul>
 
           {/* Right Side Button */}
-          <button className="btn btn-success">
-            <i class="bi bi-person-circle"></i> &nbsp; Admin
-          </button>
+          <Link to="/admin" >
+              <button className="btn btn-success">
+                <i class="bi bi-person-circle"></i> &nbsp;Admin
+              </button>
+          </Link>
 
         </div>
       </div>
