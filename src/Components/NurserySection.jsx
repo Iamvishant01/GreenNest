@@ -20,7 +20,7 @@ function NurserySection() {
         </h2>
 
         <p>
-          GreenNest is the perfect solution for modern nursery management.
+          GreenNest is the perfect solution for your  modern nursery management.
           It helps you easily organize plant inventory, track sales,
           manage customer records, and streamline daily operations in one place.
           With its simple and user-friendly system, GreenNest saves time,
